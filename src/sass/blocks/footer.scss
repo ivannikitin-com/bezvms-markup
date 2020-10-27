@@ -1,0 +1,20 @@
+.site-footer {
+  &__info {
+    text-align: center;
+  }
+
+  &__subtitle-main {
+    margin-bottom: 40px;
+  }
+
+  &__bottom {
+    background-color: $black-one;
+    min-height: 100px;
+  }
+
+  .copyright {
+    text-align: center;
+    color: $white;
+    font-size: 16px;
+  }
+}
