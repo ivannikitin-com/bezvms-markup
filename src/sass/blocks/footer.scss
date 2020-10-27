@@ -9,7 +9,10 @@
 
   &__bottom {
     background-color: $black-one;
-    min-height: 100px;
+
+    .row {
+      min-height: 100px;
+    }
   }
 
   .copyright {
