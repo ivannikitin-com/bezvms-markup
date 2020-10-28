@@ -33,6 +33,10 @@ a:hover {
   // color: $carmine;
 }
 
+main {
+  padding-bottom: 7.2%;
+}
+
 .title-main {
   font-size: 45px;
   color: $red;
@@ -67,7 +71,14 @@ a:hover {
     left: 0;
     width: 100%;
     z-index: 10;
-    padding: 20px 20px 30px 64px;
+    padding: 20px 20px 42px 64px;
+  }
+
+  &__additional-text {
+    display: none;
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 20px;
   }
 
   &__mask {
@@ -78,6 +89,7 @@ a:hover {
     height: 100%;
     background: $white-65;
     transition: all 0.3s ease;
+    z-index: 6;
   }
 
   &__link {
@@ -99,6 +111,10 @@ a:hover {
       #{$this}__badge {
         background-color: $blue;
       }
+
+      #{$this}__additional-text {
+        display: block;
+      }
     }
   }
 
@@ -106,7 +122,15 @@ a:hover {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 24px;
-    line-height: 26px;
+    line-height: 1.1;
+
+    @include media-breakpoint-between(md, lg) {
+      font-size: 20px;
+    }
+
+    @include media-breakpoint-only(sm) {
+      font-size: 16px;
+    }
   }
 
   &__badge {
@@ -120,6 +144,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    z-index: 8;
   }
 
   &__number {
