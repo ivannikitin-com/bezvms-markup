@@ -17,11 +17,24 @@
   padding: 0;
 }
 
+.navbar-toggler {
+  color: rgba(157, 0, 9, 1);
+  border-color: rgba(157, 0, 9, 1);
+
+  &-icon {
+    background-image: escape-svg($navbar-light-toggler-icon-bg);
+  }
+}
+
 .primary-menu {
+  @include media-breakpoint-up(sm) {
+    margin-left: -$navbar-nav-link-padding-x;
+  }
+
   & > .menu-item {
     $this: &;
     &:not(:last-child) {
-      margin-right: 20px;
+      margin-right: 19px;
     }
 
     & > a {

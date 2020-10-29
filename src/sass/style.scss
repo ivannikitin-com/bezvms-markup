@@ -39,12 +39,15 @@ main {
 
 .title-main {
   font-size: 45px;
+  line-height: 1.15;
+  font-weight: 300;
   color: $red;
   text-transform: uppercase;
 }
 
 .subtitle-main {
   font-size: 30px;
+  line-height: 1.15;
   color: $grey;
 }
 
