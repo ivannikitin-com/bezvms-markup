@@ -11,7 +11,7 @@
 @import "../../node_modules/bootstrap/scss/reboot";
 @import "../../node_modules/bootstrap/scss/bootstrap-grid";
 @import "../../node_modules/bootstrap/scss/utilities";
-@import "../../node_modules/bootstrap/scss/type";
+// @import "../../node_modules/bootstrap/scss/type";
 @import "../../node_modules/bootstrap/scss/nav";
 @import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/navbar";
@@ -33,6 +33,33 @@ a:hover {
   // color: $carmine;
 }
 
+b,
+strong {
+  font-weight: $font-weight-bold;
+}
+
+h1 {
+  font-size: 36px;
+  color: $grey-one;
+  font-weight: bold;
+
+  @extend .text-to-crop;
+}
+
+h2 {
+  font-size: 24px;
+  color: $grey-one;
+  font-weight: 300;
+}
+
+@mixin lhCrop($line-height, $font-size: 36px) {
+  margin-top: calc((1 - #{$line-height}) * #{$font-size});
+}
+
+.text-to-crop {
+  @include lhCrop($headings-line-height, $h1-font-size);
+}
+
 main {
   padding-bottom: 7.2%;
 }
@@ -48,8 +75,62 @@ main {
 
 .subtitle-main {
   font-size: 30px;
+  font-weight: 300;
   line-height: 1.15;
   color: $grey;
+}
+
+.breadcrumbs {
+  background: $grey-two;
+  padding: 5px 0 6px;
+  line-height: 1.04;
+  text-align: center;
+
+  a {
+    font-size: 10px;
+    font-weight: bold;
+    color: $grey-one;
+    text-decoration: none;
+    margin-right: 6px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &:hover {
+      color: $link-color;
+    }
+  }
+
+  .entry {
+    & h2,
+    & .h2 {
+      font-weight: $font-weight-light !important;
+    }
+  }
+
+  #breadcrumbs {
+    margin: 0;
+
+    span {
+      color: $grey-one;
+      font-size: 10px;
+      font-weight: bold;
+      margin-left: 6px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      &.breadcrumb_last {
+        margin-left: 6px;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.site-content {
+  padding: 45px 0 0 0;
 }
 
 .cases {
@@ -165,5 +246,15 @@ main {
     height: 11px;
     background: url(../img/sprite.png) 0 0 no-repeat;
     margin-bottom: 18px;
+  }
+}
+
+.cases-list {
+  &__title {
+    font-size: 24px;
+    color: $grey-one;
+    font-weight: bold;
+    line-height: 1;
+    text-transform: uppercase;
   }
 }
