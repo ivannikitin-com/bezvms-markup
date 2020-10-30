@@ -2,10 +2,11 @@ $container-max-widths: (
   xl: 1170px,
 );
 
+$spacer: 1.15rem !default;
 $body-color: #666 !default;
 $font-family-base: "Roboto", sans-serif;
 $font-size-base: 0.8125rem !default;
-$paragraph-margin-bottom: 1.25rem;
+$paragraph-margin-bottom: 1.5rem;
 $link-color: #990000 !default;
 $link-decoration: underline !default;
 $link-hover-color: #3366cc !default;
@@ -21,10 +22,4 @@ $red: #9d0009;
 $red-85: rgba(157, 0, 9, 0.85);
 $blue: #3366cc;
 $body-bg: $white;
-// $headings-font-weight: 700 !default;
 $h1-font-size: 36px;
-// $h2-font-size: $font-size-base * 2 !default;
-// $h3-font-size: $font-size-base * 1.75 !default;
-// $h4-font-size: $font-size-base * 1.5 !default;
-// $h5-font-size: $font-size-base * 1.25 !default;
-// $h6-font-size: $font-size-base !default;

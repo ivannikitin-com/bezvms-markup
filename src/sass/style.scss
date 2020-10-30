@@ -11,7 +11,7 @@
 @import "../../node_modules/bootstrap/scss/reboot";
 @import "../../node_modules/bootstrap/scss/bootstrap-grid";
 @import "../../node_modules/bootstrap/scss/utilities";
-// @import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/type";
 @import "../../node_modules/bootstrap/scss/nav";
 @import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/navbar";
@@ -29,13 +29,48 @@ a[href^="tel:"] {
   text-decoration: none;
 }
 
-a:hover {
-  // color: $carmine;
+a[href^="mailto:"] {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 b,
 strong {
   font-weight: $font-weight-bold;
+}
+
+p {
+  line-height: 24px;
+}
+
+.alignleft {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 22px;
+}
+
+.alignright {
+  float: right;
+  margin-left: 30px;
+  margin-bottom: 22px;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 22px;
+}
+
+.wp-block-image {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 h1 {
@@ -49,7 +84,15 @@ h1 {
 h2 {
   font-size: 24px;
   color: $grey-one;
-  font-weight: 300;
+  font-weight: $font-weight-light;
+}
+
+.entry {
+  & h2,
+  & .h2 {
+    border-bottom: 2px solid $grey-two;
+    padding-bottom: 14px;
+  }
 }
 
 @mixin lhCrop($line-height, $font-size: 36px) {
@@ -70,7 +113,8 @@ main {
   font-weight: 300;
   color: $red;
   text-transform: uppercase;
-  margin-bottom: 11px;
+  margin-bottom: 9px;
+  white-space: nowrap;
 }
 
 .subtitle-main {
@@ -78,6 +122,7 @@ main {
   font-weight: 300;
   line-height: 1.15;
   color: $grey;
+  margin-bottom: 18px;
 }
 
 .breadcrumbs {
@@ -97,13 +142,6 @@ main {
 
     &:hover {
       color: $link-color;
-    }
-  }
-
-  .entry {
-    & h2,
-    & .h2 {
-      font-weight: $font-weight-light !important;
     }
   }
 
@@ -130,7 +168,7 @@ main {
 }
 
 .site-content {
-  padding: 45px 0 0 0;
+  padding: 60px 0 0 0;
 }
 
 .cases {
@@ -206,15 +244,22 @@ main {
   &__title {
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 24px;
-    line-height: 1.1;
+    font-size: 16px;
+    line-height: 21px;
+
+    @include media-breakpoint-only(xl) {
+      font-size: 24px;
+      line-height: 1.1;
+    }
 
     @include media-breakpoint-between(md, lg) {
-      font-size: 20px;
+      font-size: 16px;
+      line-height: 21px;
     }
 
     @include media-breakpoint-only(sm) {
-      font-size: 16px;
+      font-size: 14px;
+      line-height: 16px;
     }
   }
 
@@ -250,11 +295,24 @@ main {
 }
 
 .cases-list {
-  &__title {
+  &__title-list {
     font-size: 24px;
     color: $grey-one;
     font-weight: bold;
     line-height: 1;
     text-transform: uppercase;
+    margin-bottom: 18px;
+    margin-left: 10px;
+  }
+
+  &__item {
+    color: $white;
+    font-size: 14px;
+    font-weight: bold;
+    background: $blue;
+    margin-bottom: 6px;
+    padding: 5px 9px 8px;
+    text-transform: uppercase;
+    line-height: 1.34;
   }
 }

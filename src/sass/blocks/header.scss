@@ -1,6 +1,22 @@
 .site-header {
-  margin-bottom: 40px;
+  $this: &;
   padding-top: 32px;
+
+  &_home {
+    margin-bottom: 40px;
+  }
+
+  &__column-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &_inner {
+    #{$this}__column-2 {
+      align-items: center;
+    }
+  }
 
   &__img {
     position: relative;
@@ -10,6 +26,14 @@
     position: absolute;
     right: 0;
     bottom: 0;
+  }
+
+  &__title_wrap {
+    flex-grow: column wrap;
+  }
+
+  &_inner &__logo {
+    position: static;
   }
 }
 
@@ -30,6 +54,7 @@
 .primary-menu {
   @include media-breakpoint-up(sm) {
     margin-left: -$navbar-nav-link-padding-x;
+    margin-top: -$nav-link-padding-y;
   }
 
   & > .menu-item {
