@@ -15,6 +15,10 @@
   &_inner {
     #{$this}__column-2 {
       align-items: center;
+
+      .nav-main {
+        margin-bottom: 11px;
+      }
     }
   }
 
@@ -39,7 +43,6 @@
 
 .nav-main {
   padding: 0;
-  margin-bottom: 11px;
 }
 
 .navbar-toggler {
