@@ -319,9 +319,11 @@ main {
     line-height: 1.34;
     text-decoration: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: $white;
       color: $blue;
+      outline: 0;
     }
   }
 }
