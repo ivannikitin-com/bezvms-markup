@@ -122,7 +122,6 @@ main {
   font-weight: 300;
   line-height: 1.15;
   color: $grey;
-  margin-bottom: 18px;
 }
 
 .breadcrumbs {
@@ -134,7 +133,7 @@ main {
   a {
     font-size: 10px;
     font-weight: bold;
-    color: $grey-one;
+    color: $grey;
     text-decoration: none;
     margin-right: 6px;
     text-transform: uppercase;
@@ -147,9 +146,10 @@ main {
 
   #breadcrumbs {
     margin: 0;
+    line-height: 1.05;
 
     span {
-      color: $grey-one;
+      color: $grey;
       font-size: 10px;
       font-weight: bold;
       margin-left: 6px;
@@ -158,6 +158,7 @@ main {
 
       &.breadcrumb_last {
         margin-left: 6px;
+        color: $grey-one;
       }
 
       &:first-child {
@@ -325,5 +326,45 @@ main {
       color: $blue;
       outline: 0;
     }
+  }
+}
+
+.error404 {
+  &__entry {
+    text-align: center;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h1 {
+    font-size: 120px;
+  }
+
+  &__subtitle {
+    font-size: 27px;
+    font-weight: bold;
+    color: $grey-one;
+    line-height: 1.2;
+    margin-bottom: 14px;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 28px;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: 34px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 29px;
+    }
+  }
+
+  &__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
