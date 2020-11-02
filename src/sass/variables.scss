@@ -2,21 +2,25 @@ $container-max-widths: (
   xl: 1170px,
 );
 
-$spacer: 1.15rem !default;
-$body-color: #666 !default;
+$input-btn-padding-y: 0.41rem;
+$spacer: 1.15rem;
+$body-color: #666;
 $font-family-base: "Roboto", sans-serif;
-$font-size-base: 0.8125rem !default;
+$font-size-base: 0.8125rem;
 $paragraph-margin-bottom: 1.5rem;
-$link-color: #990000 !default;
-$link-decoration: underline !default;
-$link-hover-color: #3366cc !default;
-$link-hover-decoration: none !default;
+$link-color: #990000;
+$link-decoration: underline;
+$link-hover-color: #3366cc;
+$link-hover-decoration: none;
+$border-radius: 0;
 $white: #fff;
 $white-65: rgba(255, 255, 255, 0.65);
 $black-one: #292929;
 $grey: #666;
-$grey-one: #333;
+$gray-800: #333;
+$grey-one: $gray-800;
 $grey-two: #ebebeb;
+$grey-three: #ebebec;
 $dark-grey: #26292c;
 $red: #9d0009;
 $red-85: rgba(157, 0, 9, 0.85);
