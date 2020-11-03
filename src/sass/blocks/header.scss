@@ -14,7 +14,9 @@
 
   &_inner {
     #{$this}__column-2 {
-      align-items: center;
+      @include media-breakpoint-up(sm) {
+        align-items: center;
+      }
 
       .nav-main {
         margin-bottom: 11px;
