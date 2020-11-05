@@ -75,6 +75,19 @@ p {
   }
 }
 
+.wp-caption {
+  &-text {
+    font-size: 12px;
+    color: #999999;
+    font-style: italic;
+    text-align: center;
+    line-height: normal;
+  }
+  &-img {
+    margin-bottom: 18px;
+  }
+}
+
 h1 {
   font-size: 36px;
   color: $grey-one;
@@ -94,6 +107,7 @@ h2 {
   & .h2 {
     border-bottom: 2px solid $grey-two;
     padding-bottom: 14px;
+    display: flex;
   }
 
   & ol {
@@ -233,6 +247,11 @@ main {
       }
     }
   }
+}
+
+.entry-readmore-wrap {
+  @extend .btn;
+  @extend .btn-dark;
 }
 
 .cases {
@@ -380,6 +399,7 @@ main {
     font-size: 14px;
     font-weight: bold;
     padding: 0 9px;
+    justify-content: space-between;
     margin-bottom: 6px;
 
     &:hover {
@@ -410,7 +430,19 @@ main {
 }
 
 .case-preview {
-  h1 {
+  &__row {
+    flex-wrap: nowrap;
+  }
+
+  &__column-1 {
+    padding: 0 15px;
+    flex: 0 1 auto;
+    max-width: 100%;
+  }
+
+  &__column-2 {
+    flex: 1 0 165px;
+    padding: 0 15px;
   }
 
   &__tags {
@@ -443,20 +475,17 @@ main {
   }
 
   &__img-wrap {
-    @include float-left;
+    @extend .alignleft;
+    // @include float-left;
     width: 50%;
   }
 
   &__img-caption {
-    font-size: 12px;
-    color: $grey-four;
-    font-style: italic;
-    text-align: center;
-    line-height: normal;
+    @extend .wp-caption-text;
   }
 
   &__img {
-    margin-bottom: 18px;
+    @extend .wp-caption-img;
   }
 
   &__link {
@@ -467,16 +496,22 @@ main {
 .test-knowledge-badge {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   background: $grey-three;
   min-width: 165px;
-  padding: 28px 15px 24px;
+  padding: 28px 4px 24px;
+
+  > * {
+    margin-bottom: 18px;
+  }
 
   &__icon {
-    font-weight: bold;
-    font-size: 72px;
-    color: $red;
-    line-height: 1;
+    display: inline-block;
+    flex: 0 0 auto;
+    width: 33px;
+    height: 52px;
+    background: url(../img/sprite.png) -235px 0 no-repeat;
     margin-right: 8px;
   }
 
@@ -493,6 +528,7 @@ main {
     font-size: 16px;
     color: $red;
     font-weight: bold;
+    line-height: 1.2;
     text-transform: uppercase;
   }
 
@@ -500,7 +536,7 @@ main {
     font-size: 13px;
     font-weight: bold;
     text-align: center;
-    flex: 0 0 auto;
+    flex: 0 0 150px;
     width: auto;
     max-width: 100%;
     padding: 0 15px;
@@ -509,16 +545,26 @@ main {
   &__links {
     display: flex;
     flex-wrap: wrap;
-    flex-basis: 0;
+    align-items: flex-start;
+    justify-content: center;
     flex-grow: 1;
     padding: 0 15px;
-    margin: 0 -7px;
     max-width: 100%;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-bottom: 0;
   }
 
   &__btn {
     white-space: nowrap;
-    margin: 0 7px 14px;
+    margin-left: 8px;
+    margin-right: 8px;
+    flex: 1 0 150px;
+    max-width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
   }
 }
 
