@@ -110,18 +110,19 @@ h2 {
     display: flex;
   }
 
-  & ol {
+  ol {
     counter-reset: myCounter;
     line-height: 1.24;
+    padding-left: 28px;
 
     li {
       list-style: none;
       margin-bottom: 9px;
       &::before {
         counter-increment: myCounter;
-        content: counter(myCounter);
+        content: counter(myCounter) ".";
         display: inline-block;
-        margin: 0 30px 0 0;
+        margin: 0 28px 0 0;
       }
     }
   }
@@ -252,6 +253,11 @@ main {
 .entry-readmore-wrap {
   @extend .btn;
   @extend .btn-dark;
+
+  a {
+    text-decoration: none;
+    background-color: inherit;
+  }
 }
 
 .cases {
