@@ -1,7 +1,5 @@
 @import "variables";
 
-// @import "../../node_modules/bootstrap/scss/bootstrap";
-
 // Required
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
@@ -70,8 +68,7 @@ p {
 
 .wp-block-image {
   img {
-    max-width: 100%;
-    height: auto;
+    @extend .img-fluid;
   }
 }
 
@@ -82,9 +79,6 @@ p {
     font-style: italic;
     text-align: center;
     line-height: normal;
-  }
-  &-img {
-    margin-bottom: 18px;
   }
 }
 
@@ -108,6 +102,7 @@ h2 {
     border-bottom: 2px solid $grey-two;
     padding-bottom: 14px;
     display: flex;
+    margin-bottom: 56px;
   }
 
   ol {
@@ -408,7 +403,8 @@ main {
     justify-content: space-between;
     margin-bottom: 6px;
 
-    &:hover {
+    &:hover,
+    &.current-menu-item {
       background: $white;
       color: $blue;
 
@@ -437,18 +433,20 @@ main {
 
 .case-preview {
   &__row {
-    flex-wrap: nowrap;
+    @include media-breakpoint-up(md) {
+      flex-wrap: nowrap;
+    }
   }
 
   &__column-1 {
-    padding: 0 15px;
+    padding: 0 15px 7%;
     flex: 0 1 auto;
     max-width: 100%;
   }
 
   &__column-2 {
     flex: 1 0 165px;
-    padding: 0 15px;
+    padding: 0 15px 7%;
   }
 
   &__tags {
@@ -477,12 +475,7 @@ main {
   }
 
   &__img-wrap {
-    padding-bottom: 15px;
-  }
-
-  &__img-wrap {
     @extend .alignleft;
-    // @include float-left;
     width: 50%;
   }
 
@@ -490,8 +483,9 @@ main {
     @extend .wp-caption-text;
   }
 
-  &__img {
-    @extend .wp-caption-img;
+  &__img,
+  figure img {
+    margin-bottom: 18px;
   }
 
   &__link {
@@ -574,6 +568,83 @@ main {
   }
 }
 
+.rubricator {
+  h1 {
+    margin-bottom: 42px;
+  }
+
+  &__list {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.case-sections {
+  $this: &;
+
+  &__column {
+    display: flex;
+    margin-bottom: 57px;
+  }
+
+  &__mask {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $red-85;
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 18px;
+    color: $grey-one;
+    text-align: center;
+    line-height: 22px;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    flex: 1 1 auto;
+    text-decoration: none;
+
+    &:hover #{$this}__title {
+      color: $red;
+    }
+
+    &:hover #{$this}__mask {
+      opacity: 1;
+      transition: 0.5s;
+    }
+  }
+
+  &__img-wrap {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    text-transform: uppercase;
+    // flex: 0 1 auto;
+    width: 100%;
+    max-width: 167px;
+    margin-bottom: 20px;
+  }
+}
+
 .error404 {
   &__entry {
     text-align: center;
@@ -611,20 +682,5 @@ main {
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
-}
-
-.rubricator {
-  h1 {
-    margin-bottom: 42px;
-  }
-
-  &__list {
-    list-style-type: none;
-    padding-left: 0;
-
-    li {
-      margin-bottom: 5px;
-    }
   }
 }
