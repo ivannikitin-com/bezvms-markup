@@ -72,6 +72,38 @@ p {
   }
 }
 
+.page .entry {
+  figure img {
+    margin-bottom: 18px;
+    width: 100%;
+    height: auto;
+  }
+
+  figure.alignleft {
+    padding-right: 0;
+    float: none;
+
+    @include media-breakpoint-up(lg) {
+      float: left;
+      width: 50% !important;
+      padding-right: 30px;
+      margin-right: 0;
+    }
+  }
+
+  figure.alignright {
+    padding-left: 0;
+    float: none;
+
+    @include media-breakpoint-up(lg) {
+      float: right;
+      width: 50% !important;
+      padding-left: 30px;
+      margin-left: 0;
+    }
+  }
+}
+
 .wp-caption {
   &-text {
     font-size: 12px;
@@ -102,7 +134,7 @@ h2 {
     border-bottom: 2px solid $grey-two;
     padding-bottom: 14px;
     display: flex;
-    margin-bottom: 56px;
+    margin-bottom: 24px;
   }
 
   ol {
@@ -404,7 +436,8 @@ main {
     margin-bottom: 6px;
 
     &:hover,
-    &.current-menu-item {
+    &.current-menu-item,
+    &:focus-within {
       background: $white;
       color: $blue;
 
@@ -476,16 +509,11 @@ main {
 
   &__img-wrap {
     @extend .alignleft;
-    width: 50%;
+    max-width: 50%;
   }
 
   &__img-caption {
     @extend .wp-caption-text;
-  }
-
-  &__img,
-  figure img {
-    margin-bottom: 18px;
   }
 
   &__link {
@@ -589,6 +617,7 @@ main {
   &__column {
     display: flex;
     margin-bottom: 57px;
+    justify-content: center;
   }
 
   &__mask {
@@ -642,6 +671,13 @@ main {
     width: 100%;
     max-width: 167px;
     margin-bottom: 20px;
+  }
+}
+
+.owl-carousel {
+  .owl-item img {
+    width: 100%;
+    height: auto;
   }
 }
 
