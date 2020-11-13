@@ -657,7 +657,6 @@ main {
 
   &__btn {
     text-transform: uppercase;
-    // flex: 0 1 auto;
     width: 100%;
     max-width: 167px;
     margin-bottom: 20px;
@@ -665,6 +664,56 @@ main {
 }
 
 .owl-carousel {
+  .owl-stage-outer {
+    margin-left: 45px;
+    margin-right: 45px;
+  }
+
+  .owl-nav {
+    top: 50%;
+    position: absolute;
+    margin-top: 0;
+    width: 100%;
+
+    .ticon {
+      display: inline-block;
+      width: 23px;
+      height: 39px;
+      background: url(../img/sprite.png) 0 -63px no-repeat;
+    }
+
+    & .owl-prev,
+    & .owl-next {
+      border: 0;
+      padding: 0;
+      background: none;
+      font-size: 0;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    .owl-prev {
+      .ticon {
+        transform: rotateY(180deg);
+      }
+
+      &:focus .ticon,
+      &:hover .ticon {
+        background-position: -50px -63px;
+        transform: rotateY(180deg);
+      }
+    }
+
+    .owl-next {
+      &:focus .ticon,
+      &:hover .ticon {
+        background-position: -50px -63px;
+      }
+    }
+  }
+
   .owl-item {
     .wpex-carousel-entry-media {
       padding-bottom: 18px;
