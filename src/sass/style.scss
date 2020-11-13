@@ -277,16 +277,6 @@ main {
   }
 }
 
-.entry-readmore-wrap {
-  @extend .btn;
-  @extend .btn-dark;
-
-  a {
-    text-decoration: none;
-    background-color: inherit;
-  }
-}
-
 .cases {
   $this: &;
 
@@ -675,9 +665,53 @@ main {
 }
 
 .owl-carousel {
-  .owl-item img {
-    width: 100%;
-    height: auto;
+  .owl-item {
+    .wpex-carousel-entry-media {
+      padding-bottom: 18px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .wp-caption-text {
+      font-style: normal;
+      font-size: 13px;
+      line-height: 15px;
+      color: $grey;
+      margin-bottom: 15px;
+    }
+
+    .wpex-carousel-entry-details {
+      text-align: center;
+    }
+
+    .entry-readmore-wrap {
+      padding-bottom: 4px;
+
+      a {
+        @extend .btn;
+        @extend .btn-dark;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 300;
+        min-width: 167px;
+      }
+    }
+
+    .entry-title {
+      text-align: center;
+      color: $gray-800;
+      font-size: 18px;
+      line-height: 21px;
+      margin-bottom: 8px;
+
+      a {
+        @extend .entry-title;
+        text-decoration: none;
+      }
+    }
   }
 }
 
