@@ -72,11 +72,15 @@ p {
   }
 }
 
-.page .entry {
-  figure img {
-    margin-bottom: 18px;
-    width: 100%;
-    height: auto;
+.page .entry,
+.case-preview {
+  figure {
+    max-width: 100%;
+    img {
+      margin-bottom: 18px;
+      width: 100%;
+      height: auto;
+    }
   }
 
   figure.alignleft {
@@ -168,20 +172,28 @@ main {
 }
 
 .title-main {
-  font-size: 45px;
+  font-size: 30px;
   line-height: 1.15;
   font-weight: 300;
   color: $red;
   text-transform: uppercase;
   margin-bottom: 9px;
   white-space: nowrap;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 45px;
+  }
 }
 
 .subtitle-main {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 300;
   line-height: 1.15;
   color: $grey;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 30px;
+  }
 }
 
 .breadcrumbs {
@@ -463,8 +475,8 @@ main {
 
   &__column-1 {
     padding: 0 15px 7%;
-    flex: 0 1 auto;
-    max-width: 100%;
+    // flex: 0 1 auto;
+    // max-width: 100%;
   }
 
   &__column-2 {
@@ -663,7 +675,15 @@ main {
   }
 }
 
+.wpex-carousel-entry-excerpt {
+  a {
+    @extend .text-break;
+  }
+}
+
 .owl-carousel {
+  margin-bottom: 48px;
+
   .owl-stage-outer {
     margin-left: 45px;
     margin-right: 45px;
