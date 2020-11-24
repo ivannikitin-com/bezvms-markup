@@ -682,6 +682,20 @@ main {
   }
 }
 
+a[data-fancybox] {
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    background: url(../img/sprite.png) 0 -211px no-repeat;
+    left: calc(50% - 20px);
+    top: calc(50% - 20px);
+    z-index: 3;
+  }
+}
+
 .owl-carousel {
   margin-bottom: 48px;
 
@@ -725,7 +739,7 @@ main {
 
       &:focus .ticon,
       &:hover .ticon {
-        background-position: -50px -63px;
+        background-position: -52px -63px;
         transform: rotateY(180deg);
       }
     }
@@ -735,7 +749,7 @@ main {
 
       &:focus .ticon,
       &:hover .ticon {
-        background-position: -50px -63px;
+        background-position: -52px -63px;
       }
     }
   }
