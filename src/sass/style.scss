@@ -685,13 +685,12 @@ main {
 .owl-carousel {
   margin-bottom: 48px;
 
-  .owl-stage-outer {
-    margin-left: 45px;
-    margin-right: 45px;
+  figure {
+    margin-bottom: 0;
   }
 
   .owl-nav {
-    top: 50%;
+    top: 39%;
     position: absolute;
     margin-top: 0;
     width: 100%;
@@ -705,10 +704,12 @@ main {
 
     & .owl-prev,
     & .owl-next {
+      position: absolute;
       border: 0;
       padding: 0;
       background: none;
       font-size: 0;
+      transform: translateY(-100%);
 
       &:focus {
         outline: 0;
@@ -716,6 +717,8 @@ main {
     }
 
     .owl-prev {
+      left: -38px;
+
       .ticon {
         transform: rotateY(180deg);
       }
@@ -728,6 +731,8 @@ main {
     }
 
     .owl-next {
+      right: -38px;
+
       &:focus .ticon,
       &:hover .ticon {
         background-position: -50px -63px;
@@ -766,7 +771,8 @@ main {
         text-decoration: none;
         text-transform: uppercase;
         font-weight: 300;
-        min-width: 167px;
+        max-width: 100%;
+        width: 167px;
       }
     }
 
