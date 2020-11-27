@@ -828,6 +828,47 @@ a[data-fancybox] {
   }
 }
 
+.process {
+  &-horizontal {
+    display: flex;
+  }
+
+  &-step {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 236px;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+    text-align: center;
+
+    &:not(:first-child)::before {
+      content: "";
+      position: absolute;
+      height: 3px;
+      background: $red;
+      width: 50%;
+      top: 35px;
+      right: 72%;
+    }
+
+    &-circle {
+      margin-bottom: 20px;
+    }
+
+    &-content {
+      h4 {
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+    }
+
+    &-desc {
+      line-height: 1.2;
+    }
+  }
+}
+
 .error404 {
   &__entry {
     text-align: center;
