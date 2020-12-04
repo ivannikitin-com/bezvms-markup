@@ -261,6 +261,8 @@ main {
 }
 
 .btn {
+  text-transform: uppercase;
+
   &-dark:hover {
     background-color: $red;
     border-color: $red;
@@ -295,6 +297,29 @@ main {
         transform: rotateY(180deg);
       }
     }
+  }
+}
+
+.qmn_quiz_container .qmn_btn {
+  text-transform: uppercase;
+  box-shadow: none;
+  color: $white !important;
+  background: $grey-one !important;
+  border: 1px solid $grey-one !important;
+  border-width: 1px !important;
+  border-radius: 0;
+  padding: 0.41rem 0.75rem !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.5;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $red !important;
+    border: 1px solid $red !important;
+    outline: 0 !important;
   }
 }
 
@@ -688,7 +713,13 @@ main {
   }
 }
 
-a[data-fancybox] {
+a.fancybox {
+  display: block;
+  position: relative;
+}
+
+a[data-fancybox],
+a.fancybox {
   &::after {
     content: "";
     display: inline-block;
