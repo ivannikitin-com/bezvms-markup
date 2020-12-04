@@ -323,6 +323,29 @@ main {
   }
 }
 
+.mask_hover {
+  display: block;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $red-85;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 2;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
 .cases {
   $this: &;
 
@@ -714,8 +737,12 @@ main {
 }
 
 a.fancybox {
-  display: block;
-  position: relative;
+  @extend .mask_hover;
+  margin-bottom: 18px;
+
+  .page .entry figure & img {
+    margin-bottom: 0;
+  }
 }
 
 a[data-fancybox],
@@ -911,6 +938,7 @@ a.fancybox {
   &-horizontal {
     @include media-breakpoint-up(md) {
       display: flex;
+      flex-wrap: wrap;
     }
   }
 
@@ -923,15 +951,15 @@ a.fancybox {
     padding: 15px;
     text-align: center;
 
-    &:not(:first-child)::before {
+    &::before {
       @include media-breakpoint-up(md) {
         content: "";
         position: absolute;
         height: 3px;
         background: $red;
-        width: 50%;
+        width: 100%;
         top: 35px;
-        right: 72%;
+        right: 0;
       }
     }
 
