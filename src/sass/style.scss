@@ -74,6 +74,11 @@ p {
   margin-bottom: 22px;
 }
 
+figure,
+img {
+  max-width: 100%;
+}
+
 .wp-block-image {
   img {
     @extend .img-fluid;
@@ -163,6 +168,10 @@ h2 {
         content: counter(myCounter) ".";
         display: inline-block;
         margin: 0 28px 0 0;
+      }
+
+      a {
+        word-break: break-word;
       }
     }
   }
@@ -298,6 +307,10 @@ main {
       }
     }
   }
+}
+
+.qmn_pagination {
+  border: 0 !important;
 }
 
 .qmn_quiz_container .qmn_btn {
@@ -976,6 +989,35 @@ a.fancybox {
 
     &-desc {
       line-height: 1.2;
+    }
+  }
+}
+
+.vcex-image-grid {
+  $this: &;
+
+  div#{$this}-entry-img {
+    margin-bottom: 18px;
+  }
+
+  &-entry-figure {
+    margin-bottom: 0;
+  }
+
+  a#{$this}-entry-img {
+    display: block;
+    position: relative;
+    padding-bottom: 56%;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 0 50%;
     }
   }
 }
