@@ -945,6 +945,10 @@ a.fancybox {
         object-position: 0 50%;
       }
     }
+
+    a[data-fancybox] {
+      position: relative;
+    }
   }
 }
 
